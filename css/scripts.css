@@ -1,0 +1,38 @@
+body {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* display: flex; */
+  width: 70vw;
+  /* justify-content: end; */
+  /* margin: 0 auto; */
+  /* align-items: center; */
+  margin: 50px auto;
+}
+
+/* 2px border between each cell 12px (10px + 1px margin around it)*/
+/* 45px per cell including borders 45 * 16 = 720 */
+.grid-container {
+  height: 755px;
+  width: 752px;
+  border: 2px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-cell {
+  height: 43px;
+  width: 43px;
+  margin: 1px 1px;
+  border: 1px solid red;
+  border-radius: 1%;
+  /* display: inline-block; */
+}
+
+.blue {
+  background-color: blue;
+}
+
+.white {
+  background-color: white;
+}
