@@ -1,20 +1,38 @@
 const gridContainer = document.querySelector(".grid-container");
 
-for(let i = 1; i < 257; i++) {
-  const gridCellLoop = document.createElement("div");
-  gridCellLoop.classList.add("grid-cell");
-  gridContainer.appendChild(gridCellLoop);
+//Create prompt
+let gridSizePrompt = +prompt("How many squares per side should the canvas have? (Minimum 2, Maximum 100)", 2);
+console.log(gridSizePrompt);
+while(!gridSizePrompt || gridSizePrompt < 2 || gridSizePrompt > 100) {
+  gridSizePrompt = +prompt("Invalid size! How many squares per side should the canvas have? (Minimum 2, Maximum 100)", 2);
+  console.log(gridSizePrompt);
 }
 
-const gridCell = document.querySelectorAll(".grid-cell");
+//Create the grid
+const gridRow = document.createElement("div");
+gridRow.classList.add("grid-row");
 
+const gridCellCreation = document.createElement("div");
+gridCellCreation.classList.add("grid-cell");
+gridCellCreation.style.height = `${700 / gridSizePrompt}px`; 
+gridCellCreation.style.boxSizing = "border-box";
+
+for(let i = 0; i < gridSizePrompt; i++) { 
+  gridRow.appendChild(gridCellCreation.cloneNode(true));
+}
+for(let i =0; i < gridSizePrompt; i++) { 
+  gridContainer.appendChild(gridRow.cloneNode(true));
+}
+
+//Drawing Logic
+const gridCellSelector = document.querySelectorAll(".grid-cell");
 gridContainer.addEventListener("mousedown", startDrawing);
 document.addEventListener("mouseup", stopDrawing);
 
 function startDrawing(event) {
   if(event.target.classList.contains("grid-cell")) {
     event.target.classList.add("blue"); 
-    gridCell.forEach(drawMoveMouse);
+    gridCellSelector.forEach(drawMoveMouse);
   }
 }
 
@@ -27,25 +45,7 @@ function drawChangeColor(event) {
 }
 
 function stopDrawing() {
-  gridCell.forEach((node) => {
+  gridCellSelector.forEach((node) => {
     node.removeEventListener("mouseover", drawChangeColor);
   })
 }
-
-
-
-
-
-
-
-// gridCell.forEach((node) => {
-//   node.addEventListener("mousedown", drawing);
-//     gridCell.forEach((anotherNode) => {
-//       anotherNode.addEventListener("mouseover", drawing)
-//     })
-// });
-
-// function drawing(e) {
-//  e.target.style.backgroundColor = "blue";
-//  console.log("hey");
-// }
