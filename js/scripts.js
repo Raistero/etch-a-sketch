@@ -1,10 +1,10 @@
 const gridContainer = document.querySelector(".grid-container");
 
 //Create prompt
-let gridSizePrompt = +prompt("How many squares per side should the canvas have? (Minimum 2, Maximum 100)", 2);
+let gridSizePrompt = +prompt("How many squares per side should the canvas have? (Minimum 2, Maximum 50)", 2);
 console.log(gridSizePrompt);
-while(!gridSizePrompt || gridSizePrompt < 2 || gridSizePrompt > 100) {
-  gridSizePrompt = +prompt("Invalid size! How many squares per side should the canvas have? (Minimum 2, Maximum 100)", 2);
+while(!gridSizePrompt || gridSizePrompt < 2 || gridSizePrompt > 50) {
+  gridSizePrompt = +prompt("Invalid size! How many squares per side should the canvas have? (Minimum 2, Maximum 50)", 2);
   console.log(gridSizePrompt);
 }
 
@@ -14,7 +14,7 @@ gridRow.classList.add("grid-row");
 
 const gridCellCreation = document.createElement("div");
 gridCellCreation.classList.add("grid-cell");
-gridCellCreation.style.height = `${700 / gridSizePrompt}px`; 
+gridCellCreation.style.height = `${700 / gridSizePrompt}px`;
 gridCellCreation.style.boxSizing = "border-box";
 
 for(let i = 0; i < gridSizePrompt; i++) { 
