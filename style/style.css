@@ -1,0 +1,30 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+.grid-container{
+  margin: 200px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5px;
+  height: 100%;
+  width: 331px; 
+  border: 2px solid black;
+  align-content: flex-start;
+}
+
+.grid-row {
+  display: flex;
+  gap: 0.5px;
+}
+
+.cell {
+  border: 1px solid red;
+  width: 20px;
+  height: 20px;
+  align-items: flex-start;
+}
