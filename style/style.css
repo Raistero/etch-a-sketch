@@ -7,24 +7,24 @@
 }
 
 .grid-container{
-  margin: 200px auto;
+  box-sizing: content-box;
+  margin: 100px auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5px;
   height: 100%;
-  width: 331px; 
+  width: 960px;
   border: 2px solid black;
   align-content: flex-start;
 }
 
-.grid-row {
-  display: flex;
-  gap: 0.5px;
+.cell {
+  border: 0.5px solid red;
+  width: 60px;
+  height: 60px;
+  align-items: flex-start;
 }
 
-.cell {
-  border: 1px solid red;
-  width: 20px;
-  height: 20px;
-  align-items: flex-start;
+#prompt-button {
+  display: block;
+  margin: 10px auto;
 }
