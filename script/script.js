@@ -80,6 +80,7 @@ changeSquaresButton.addEventListener("click", () => {
   });
 });
 
+//Clears the board when clicked
 randomColoursButton.addEventListener('click', () => {
   clearHelper();
   isRandomColourToggle = !isRandomColourToggle;
