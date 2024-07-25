@@ -24,7 +24,10 @@
   align-items: flex-start;
 }
 
-#prompt-button {
+#prompt-button,
+#random-colours,
+#opacity,
+#clear {
   display: block;
   margin: 10px auto;
 }
